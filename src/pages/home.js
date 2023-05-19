@@ -6,7 +6,7 @@ const Home = ({ data, addToCart, title }) => {
 
   return (
     <div> 
-      <h1>{title === "Главное" ? null :data.length}</h1>
+      <h1> {title} {title === "Главное" ? null :data.length}</h1>
       <div className='d-flex flex-wrap gap-4 justify-content-around'>
         {data.map((product, index) => (
           <CartItem onClick={() => addToCart(product.id)} children="Add to cart" key={index} {...product} />
