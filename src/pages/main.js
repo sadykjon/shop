@@ -14,8 +14,7 @@ const Main = () => {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [input, setInput] = useState("");
-  const [title, setTitle] = useState("Главное");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [title, setTitle] = useState("Sadykjon store");
 
   useEffect(() => {
     // Save cart to localStorage whenever it changes
@@ -23,7 +22,7 @@ const Main = () => {
   }, [cart]);
 
   const categoryClick = (text) => {
-    setSelectedCategory(text);
+    
     const newp = products.products.filter((elem) => elem.category === text);
     setData([...newp]);
     setTitle(text);
@@ -75,7 +74,8 @@ const Main = () => {
                 input={input}
                 setInput={setInput}
                 searchClick={searchClick}
-                title={selectedCategory}
+                title={title}
+                setTitle={setTitle}
               />
             }
           />
